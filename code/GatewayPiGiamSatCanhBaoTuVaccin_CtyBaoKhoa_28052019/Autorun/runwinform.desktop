@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=runwinform
+Comment= Chay root desktop
+Exec= lxterminal --command "sudo mono /root/Debug/nhietdokhovacxin.exe"
+Icon=/usr/share/pixmaps/dillo.xpm
+Type=Application
+Encoding=UTF-8
+Terminal=false
+Categories=None;
