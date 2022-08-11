@@ -18,15 +18,15 @@ public partial class baocao : System.Web.UI.Page
     DataTable dt;
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Session["Khoa"] == "Mo")
-        {
-            Calendar1.Visible = false;
-            Calendar2.Visible = false;
-        }
-        else
-        {
-            Response.Redirect("~/taikhoan.aspx");
-        }
+        //if (Session["Khoa"] == "Mo")
+        //{
+        //    Calendar1.Visible = false;
+        //    Calendar2.Visible = false;
+        //}
+        //else
+        //{
+        //    Response.Redirect("~/taikhoan.aspx");
+        //}
         if (!IsPostBack)
         {
             Label1.Text = ConfigurationManager.AppSettings["tendonvi"];
@@ -84,7 +84,7 @@ public partial class baocao : System.Web.UI.Page
             {
                 if (Convert.ToDateTime(TextBox2.Text) > Convert.ToDateTime(TextBox1.Text))
                 {
-                    Con = new MySqlConnection("Server =45.119.212.41 ; Database = ctybaokhoabvculaominhbentre ; Port=3306;User ID=customer_ttp ;Password=ThinhTamPhat!@#456&*(;charset=utf8");
+                    Con = new MySqlConnection("Server =45.119.212.41 ; Database = ctybaokhoattytmocaybacbentre ; Port=3306;User ID=customer_ttp ;Password=ThinhTamPhat!@#456&*(;charset=utf8");
                     Con.Open();
                     string data1 = "SELECT * FROM xuatbaocao WHERE thoigian >= '" + TextBox1.Text + "' AND thoigian <= '" + TextBox2.Text + "'";
                     com = new MySqlCommand(data1, Con);

@@ -74,7 +74,7 @@ public partial class alarm : System.Web.UI.Page
             {
                 if (Convert.ToDateTime(TextBox2.Text) > Convert.ToDateTime(TextBox1.Text))
                 {
-                    Con = new MySqlConnection("Server =45.119.212.41 ; Database = ctybaokhoabvculaominhbentre ; Port=3306;User ID=customer_ttp ;Password=ThinhTamPhat!@#456&*(;charset=utf8");
+                    Con = new MySqlConnection("Server =45.119.212.41 ; Database = ctybaokhoattytmocaybacbentre ; Port=3306;User ID=customer_ttp ;Password=ThinhTamPhat!@#456&*(;charset=utf8");
                     Con.Open();
 
                     string data1 = "SELECT * FROM alarm WHERE thoigian >= '" + TextBox1.Text + "' AND thoigian <= '" + TextBox2.Text + "'";

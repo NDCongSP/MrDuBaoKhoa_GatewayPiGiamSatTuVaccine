@@ -13,6 +13,8 @@ using MySql.Data.MySqlClient;
 using System.Configuration;
 using System.Reflection;
 using System.IO.Ports;
+using System.Diagnostics;
+
 namespace nhietdokhovacxin
 {
     public partial class Form1 : Form
@@ -30,14 +32,14 @@ namespace nhietdokhovacxin
         DataTable dt2;
         static double Ketthuc = 0, Batdau = 0, thoigiancoi = 0;
 
-        static string id1, id2, id3, id4, id5, id6, id7;// id10, id11, id12;
+        static string id1, id2, id3, id4, id5, id6;// id10, id11, id12;
         static int thoigian, dem = 0;
 
-        static byte[] canhbao_cao = { 0, 0, 0, 0, 0, 0 };
-        static byte[] canhbao_thap = { 0, 0, 0, 0, 0, 0 };
+        static byte[] canhbao_cao = { 0, 0, 0 };
+        static byte[] canhbao_thap = { 0, 0, 0 };
         static byte CanhBaoMatDien = 0;
-        static byte[] chot_cao = { 0, 0, 0, 0, 0, 0 };
-        static byte[] chot_thap = { 0, 0, 0, 0, 0, 0 };
+        static byte[] chot_cao = { 0, 0, 0 };
+        static byte[] chot_thap = { 0, 0, 0 };
         static int baocoi = 0;
         static int reset1 = 0, reset2 = 0;
 
@@ -50,17 +52,30 @@ namespace nhietdokhovacxin
         static byte[] GhiOut = { 0, 0, 0, 0 };
         static bool[] DocIn = { false, false, false, false, false, false, false, false };
         static bool[] DocOut = { false, false, false, false, false, false, false, false };
-        static string[] TenCB = { "", "", "", "", "", "", "" };
+        static string[] TenCB = { "", "", "", "" };
         static string ThoiGianAlarm = "";
         static string NoiDung = "";
+
         private void Form1_Load(object sender, EventArgs e)
         {
             try
             {
+
                 label22.Text = ConfigurationManager.AppSettings["tendonvi"];
                 ttkn_server = mysql.Ketnoi_local();
                 if (ttkn_server == "GOOD")
                 {
+                    #region dng bo gio
+                    string TimeNow = mysql.DongBoThoiGian();
+
+                    if (TimeNow != "" && TimeNow != null)
+                    {
+                        myPLC.ThoiGian.CaiDat(Convert.ToDateTime(TimeNow).ToString("dd-MM-yyyy HH:mm:ss"));
+                        Console.WriteLine("Data_dongbo bo thanh cong " + Convert.ToDateTime(TimeNow).ToString("dd-MM-yyyy HH:mm:ss"));
+                    }
+                    else
+                        Console.WriteLine("Dong bo loi");
+                    #endregion
                     label20.BackColor = Color.Green;
                     // truy van de lay id va ten cam bien  
                     dt = mysql.DocMySQL("idds18b20");
@@ -70,18 +85,12 @@ namespace nhietdokhovacxin
                         id2 = dt.Rows[1][1].ToString().Trim();
                         id3 = dt.Rows[2][1].ToString().Trim();
                         id4 = dt.Rows[3][1].ToString().Trim();
-                        id5 = dt.Rows[4][1].ToString().Trim();
-                        id6 = dt.Rows[5][1].ToString().Trim();
-                        id7 = dt.Rows[6][1].ToString().Trim();
-                        Console.WriteLine($"{id1}-{id2}-{id3}-{id4}-{id5}-{id6}-{id7}");
+                        Console.WriteLine($"{id1}-{id2}-{id3}-{id4}");
 
                         label11.Text = TenCB[0] = dt.Rows[0][2].ToString();
                         label12.Text = TenCB[1] = dt.Rows[1][2].ToString();
                         label13.Text = TenCB[2] = dt.Rows[2][2].ToString();
                         label14.Text = TenCB[3] = dt.Rows[3][2].ToString();
-                        label15.Text = TenCB[4] = dt.Rows[4][2].ToString();
-                        label16.Text = TenCB[5] = dt.Rows[5][2].ToString();
-                        label19.Text = TenCB[6] = dt.Rows[6][2].ToString();
                     }
                     else { ttkn_server = "BAD"; }
                     dt.Clear();
@@ -127,7 +136,7 @@ namespace nhietdokhovacxin
                 }
                 #endregion
 
-                myPLC.SMS.Port_USB3G = "ttyUSB1";
+                myPLC.SMS.Port_USB3G = "/dev/ttyUSB1";
                 myPLC.SMS.Khoitao();
             }
             catch { }
@@ -295,17 +304,15 @@ namespace nhietdokhovacxin
             }
             catch { }
         }
-        private void ghicsdl(Label mylabel1, Label mylabel2, Label mylabel3, Label mylabel4, Label mylabel5, Label mylabel6, Label mylabel7)
+        private void ghicsdl(Label mylabel1, Label mylabel2, Label mylabel3, Label mylabel4)
         {
             try
             {
-                ttkn_server = mysql.insert_cmd("xuatbaocao", "now(),'" + TenCB[0] + "','" + Convert.ToDouble(mylabel1.Text).ToString() + "'");
-                ttkn_server = mysql.insert_cmd("xuatbaocao", "now(),'" + TenCB[1] + "','" + Convert.ToDouble(mylabel2.Text).ToString() + "'");
-                ttkn_server = mysql.insert_cmd("xuatbaocao", "now(),'" + TenCB[2] + "','" + Convert.ToDouble(mylabel3.Text).ToString() + "'");
-                ttkn_server = mysql.insert_cmd("xuatbaocao", "now(),'" + TenCB[3] + "','" + Convert.ToDouble(mylabel4.Text).ToString() + "'");
-                ttkn_server = mysql.insert_cmd("xuatbaocao", "now(),'" + TenCB[4] + "','" + Convert.ToDouble(mylabel5.Text).ToString() + "'");
-                ttkn_server = mysql.insert_cmd("xuatbaocao", "now(),'" + TenCB[5] + "','" + Convert.ToDouble(mylabel6.Text).ToString() + "'");
-                ttkn_server = mysql.insert_cmd("xuatbaocao", "now(),'" + TenCB[6] + "','" + mylabel7.Text + "'");
+                ttkn_server = mysql.insert_cmd("xuatbaocao", "now(),'" + TenCB[0] + "','" + mylabel1.Text + "'");
+                ttkn_server = mysql.insert_cmd("xuatbaocao", "now(),'" + TenCB[1] + "','" + mylabel2.Text + "'");
+                ttkn_server = mysql.insert_cmd("xuatbaocao", "now(),'" + TenCB[2] + "','" + mylabel3.Text + "'");
+                ttkn_server = mysql.insert_cmd("xuatbaocao", "now(),'" + TenCB[3] + "','" + mylabel4.Text + "'");
+                Console.WriteLine("ghi bao cao");
             }
             catch { ttkn_server = "BAD"; }
         }
@@ -376,8 +383,8 @@ namespace nhietdokhovacxin
                 }
 
                 #region ghi ngo ra IO8 bao coi
-                baocoi = canhbao_cao[0] + canhbao_cao[1] + canhbao_cao[2] + canhbao_cao[3] + canhbao_cao[4] + canhbao_cao[5] +
-                    canhbao_thap[0] + canhbao_thap[1] + canhbao_thap[2] + canhbao_thap[3] + canhbao_thap[4] + canhbao_thap[5] + CanhBaoMatDien;
+                baocoi = canhbao_cao[0] + canhbao_cao[1] + canhbao_cao[2] +
+                    canhbao_thap[0] + canhbao_thap[1] + canhbao_thap[2] + CanhBaoMatDien;
                 Console.WriteLine("Bat coi{0}", baocoi);
                 if (baocoi > 0)
                 {
@@ -470,7 +477,7 @@ namespace nhietdokhovacxin
         private void timer1_Tick(object sender, EventArgs e)
         {
             timer1.Enabled = false;
-            if (dem < 7)
+            if (dem < 4)
             {
                 dem++;
             }
@@ -481,7 +488,7 @@ namespace nhietdokhovacxin
             try
             {
                 // lay các so lieu
-                if (ttkn_server == "GOOD")
+                //if (ttkn_server == "GOOD")
                 {
                     // truy van de lay id va ten cam bien  
                     dt = mysql.DocMySQL("idds18b20");
@@ -491,17 +498,11 @@ namespace nhietdokhovacxin
                         id2 = dt.Rows[1][1].ToString().Trim();
                         id3 = dt.Rows[2][1].ToString().Trim();
                         id4 = dt.Rows[3][1].ToString().Trim();
-                        id5 = dt.Rows[4][1].ToString().Trim();
-                        id6 = dt.Rows[5][1].ToString().Trim();
-                        id7 = dt.Rows[6][1].ToString().Trim();
 
                         label11.Text = TenCB[0] = dt.Rows[0][2].ToString();
                         label12.Text = TenCB[1] = dt.Rows[1][2].ToString();
                         label13.Text = TenCB[2] = dt.Rows[2][2].ToString();
                         label14.Text = TenCB[3] = dt.Rows[3][2].ToString();
-                        label15.Text = TenCB[4] = dt.Rows[4][2].ToString();
-                        label16.Text = TenCB[5] = dt.Rows[5][2].ToString();
-                        label19.Text = TenCB[6] = dt.Rows[6][2].ToString();
 
                     }
                     else { ttkn_server = "BAD"; }
@@ -517,22 +518,16 @@ namespace nhietdokhovacxin
                             hienthi(id2, TenCB[1], label2, 1, dt2.Rows[0][1].ToString(), dt2.Rows[0][0].ToString(), dt2.Rows[0][2].ToString(), dt2.Rows[0][4].ToString());
                         else if (dem == 3)
                             hienthi(id3, TenCB[2], label3, 2, dt2.Rows[0][1].ToString(), dt2.Rows[0][0].ToString(), dt2.Rows[0][2].ToString(), dt2.Rows[0][4].ToString());
-                        else if (dem == 4)
-                            hienthi(id4, TenCB[3], label4, 3, dt2.Rows[0][1].ToString(), dt2.Rows[0][0].ToString(), dt2.Rows[0][2].ToString(), dt2.Rows[0][4].ToString());
-                        else if (dem == 5)
-                            hienthi(id5, TenCB[4], label5, 4, dt2.Rows[0][1].ToString(), dt2.Rows[0][0].ToString(), dt2.Rows[0][2].ToString(), dt2.Rows[0][4].ToString());
-                        else if (dem == 6)
-                            hienthi(id6, TenCB[5], label6, 5, dt2.Rows[0][1].ToString(), dt2.Rows[0][0].ToString(), dt2.Rows[0][2].ToString(), dt2.Rows[0][4].ToString());
 
 
-                        BaoMatDien(TenCB[6], label9, dt2.Rows[0][2].ToString(), dt2.Rows[0][4].ToString());
+                        BaoMatDien(TenCB[3], label4, dt2.Rows[0][2].ToString(), dt2.Rows[0][4].ToString());
 
 
                     }
                     else { ttkn_server = "BAD"; }
                 }
                 // cap nhat ia tri len web 
-                ttkn_server = mysql.capnhatgiatriweb(label1.Text.Trim(), label2.Text.Trim(), label3.Text.Trim(), label4.Text.Trim(), label5.Text.Trim(), label6.Text.Trim(), label9.Text.Trim());
+                ttkn_server = mysql.capnhatgiatriweb(label1.Text.Trim(), label2.Text.Trim(), label3.Text.Trim(), label4.Text.Trim());
             }
             catch { }
             timer1.Enabled = true;
@@ -543,7 +538,7 @@ namespace nhietdokhovacxin
             timer2.Enabled = false;
             try
             {
-                ghicsdl(label1, label2, label3, label4, label5, label6, label9);
+                ghicsdl(label1, label2, label3, label4);
             }
             catch { }
             timer2.Enabled = true;

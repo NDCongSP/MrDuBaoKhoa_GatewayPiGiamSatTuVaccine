@@ -24,7 +24,7 @@ public partial class cauhinh : System.Web.UI.Page
             if (!IsPostBack)
             {
                 Label10.Text = ConfigurationManager.AppSettings["tendonvi"];
-                Con = new MySqlConnection("Server =45.119.212.41 ; Database = ctybaokhoabvculaominhbentre ; Port=3306;User ID=customer_ttp ;Password=ThinhTamPhat!@#456&*(;charset=utf8");
+                Con = new MySqlConnection("Server =45.119.212.41 ; Database = ctybaokhoattytmocaybacbentre ; Port=3306;User ID=customer_ttp ;Password=ThinhTamPhat!@#456&*(;charset=utf8");
                 Con.Open();
                 // truy van de lay cac thong so hien len label,textbox
                 string data = "SELECT * FROM idds18b20";
@@ -36,23 +36,14 @@ public partial class cauhinh : System.Web.UI.Page
                 Label1.Text = dt.Rows[0][0].ToString();
                 Label2.Text = dt.Rows[1][0].ToString();
                 Label3.Text = dt.Rows[2][0].ToString();
-                Label4.Text = dt.Rows[3][0].ToString();
-                Label5.Text = dt.Rows[4][0].ToString();
-                Label6.Text = dt.Rows[5][0].ToString();
 
                 TextBox1.Text = dt.Rows[0][1].ToString();
                 TextBox2.Text = dt.Rows[1][1].ToString();
                 TextBox3.Text = dt.Rows[2][1].ToString();
-                TextBox4.Text = dt.Rows[3][1].ToString();
-                TextBox5.Text = dt.Rows[4][1].ToString();
-                TextBox6.Text = dt.Rows[5][1].ToString();
 
                 TextBox10.Text = dt.Rows[0][2].ToString();
                 TextBox11.Text = dt.Rows[1][2].ToString();
                 TextBox12.Text = dt.Rows[2][2].ToString();
-                TextBox13.Text = dt.Rows[3][2].ToString();
-                TextBox14.Text = dt.Rows[4][2].ToString();
-                TextBox15.Text = dt.Rows[5][2].ToString();
                 // truy van de lay thoi gian hien len text box
                 string data1 = "SELECT * FROM thoigiancapnhat";
                 com = new MySqlCommand(data1, Con);
@@ -85,7 +76,7 @@ public partial class cauhinh : System.Web.UI.Page
     {
         try
         {
-            Con = new MySqlConnection("Server =45.119.212.41 ; Database = ctybaokhoabvculaominhbentre ; Port=3306;User ID=customer_ttp ;Password=ThinhTamPhat!@#456&*(;charset=utf8");
+            Con = new MySqlConnection("Server =45.119.212.41 ; Database = ctybaokhoattytmocaybacbentre ; Port=3306;User ID=customer_ttp ;Password=ThinhTamPhat!@#456&*(;charset=utf8");
             Con.Open();
             string data = "update idds18b20 set DCID ='" + mytextbox1.Text.Trim() + "' , tencb='" + mytextbox2.Text.Trim() + "' where id='" + mylabel.Text.Trim() + "'";
             com = new MySqlCommand(data, Con);
@@ -111,23 +102,11 @@ public partial class cauhinh : System.Web.UI.Page
     {
         capnhatid(TextBox3, TextBox12, Label3);
     }
-    protected void Button9_Click(object sender, EventArgs e)
-    {
-        capnhatid(TextBox4, TextBox13, Label4);
-    }
-    protected void Button10_Click(object sender, EventArgs e)
-    {
-        capnhatid(TextBox5, TextBox14, Label5);
-    }
-    protected void Button11_Click(object sender, EventArgs e)
-    {
-        capnhatid(TextBox6, TextBox15, Label6);
-    }
     protected void Button15_Click(object sender, EventArgs e)
     {
         try
         {
-            Con = new MySqlConnection("Server =45.119.212.41 ; Database = ctybaokhoabvculaominhbentre ; Port=3306;User ID=customer_ttp ;Password=ThinhTamPhat!@#456&*(;charset=utf8");
+            Con = new MySqlConnection("Server =45.119.212.41 ; Database = ctybaokhoattytmocaybacbentre ; Port=3306;User ID=customer_ttp ;Password=ThinhTamPhat!@#456&*(;charset=utf8");
             Con.Open();
             // truy van de lay cac thong so h cua tai khoan
             string data3 = "SELECT * FROM taikhoan";
@@ -166,7 +145,7 @@ public partial class cauhinh : System.Web.UI.Page
         try
         {
 
-            Con = new MySqlConnection("Server =45.119.212.41 ; Database = ctybaokhoabvculaominhbentre ; Port=3306;User ID=customer_ttp ;Password=ThinhTamPhat!@#456&*(;charset=utf8");
+            Con = new MySqlConnection("Server =45.119.212.41 ; Database = ctybaokhoattytmocaybacbentre ; Port=3306;User ID=customer_ttp ;Password=ThinhTamPhat!@#456&*(;charset=utf8");
             Con.Open();
             // update thoi gian cap nhat du lieu
             string data = "update thoigiancapnhat set thoigian = '" + TextBox22.Text.Trim() + "',thoigiancoi= '" + TextBox30.Text.Trim() + "'";
@@ -181,7 +160,7 @@ public partial class cauhinh : System.Web.UI.Page
     {
         try
         {
-            Con = new MySqlConnection("Server =45.119.212.41 ; Database = ctybaokhoabvculaominhbentre ; Port=3306;User ID=customer_ttp ;Password=ThinhTamPhat!@#456&*(;charset=utf8");
+            Con = new MySqlConnection("Server =45.119.212.41 ; Database = ctybaokhoattytmocaybacbentre ; Port=3306;User ID=customer_ttp ;Password=ThinhTamPhat!@#456&*(;charset=utf8");
             Con.Open();
             // update sodt,email nhan canh bao
             string data = "update gioihannhietdo set sdtsms = '" + TextBox23.Text.Trim() + "',email = '" + TextBox25.Text.Trim() + "'";
@@ -195,7 +174,7 @@ public partial class cauhinh : System.Web.UI.Page
     {
         try
         {
-            Con = new MySqlConnection("Server =45.119.212.41 ; Database = ctybaokhoabvculaominhbentre ; Port=3306;User ID=customer_ttp ;Password=ThinhTamPhat!@#456&*(;charset=utf8");
+            Con = new MySqlConnection("Server =45.119.212.41 ; Database = ctybaokhoattytmocaybacbentre ; Port=3306;User ID=customer_ttp ;Password=ThinhTamPhat!@#456&*(;charset=utf8");
             Con.Open();
             // update nguong canh bao nhiet do
             string data = "update gioihannhietdo set muccao = '" + TextBox26.Text.Trim() + "',mucthap = '" + TextBox27.Text.Trim() + "'";

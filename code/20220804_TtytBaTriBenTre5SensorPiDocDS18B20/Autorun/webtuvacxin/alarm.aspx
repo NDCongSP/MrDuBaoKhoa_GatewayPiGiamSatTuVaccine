@@ -11,27 +11,31 @@
     <form id="form1" runat="server">
         <div>
             <table style="width: 100%; height: 100%">
-                <tr>
+               <tr>
 
                     <td style="width: 17%; text-align: center">
+
                         <asp:Image ID="Image2" runat="server" ImageUrl="~/BOYTE1.jpg" />
+
                     </td>
                     <td style="width: 60%">
-                        <table style="width: 100%; height: 100%">
+                        <table style="width: 100%">
                             <tr>
                                 <td style="text-align: center">
                                     <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Names="Cambria" Font-Size="XX-Large" ForeColor="#006600" Text="TRUNG TÂM Y TẾ DỰ PHÒNG QUẬN THỦ ĐỨC"></asp:Label>
                                     &nbsp;</td>
                             </tr>
                             <tr style="text-align: center">
-                                <td style="color: #FF0000; font-size: x-large">PHẦN MỀM GIÁM SÁT CẢNH BÁO NHIỆT ĐỘ KHO VÀ CÁC TỦ VACCINE</td>
+                                <td style="color: #FF0000; font-size: x-large;">PHẦN MỀM GIÁM SÁT CẢNH BÁO NHIỆT ĐỘ KHO VÀ CÁC TỦ VACCINE</td>
                             </tr>
                         </table>
 
 
                     </td>
                     <td style="width: 23%; text-align: center">
-                        <asp:Image ID="Image1" style="height:50%;width:50%" runat="server" ImageUrl="~/logoCty.jpg" />
+
+                        <asp:Image ID="Image1" runat="server" Style="height: 50%; width: 50%" ImageUrl="~/logoCty.jpg" />
+
                     </td>
                 </tr>
                 <tr>

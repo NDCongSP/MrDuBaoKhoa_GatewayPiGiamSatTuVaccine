@@ -26,16 +26,18 @@
                             <tr>
                                 <td style="text-align: center">
                                     <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Names="Cambria" Font-Size="XX-Large" ForeColor="#006600" Text="TRUNG TÂM Y TẾ DỰ PHÒNG QUẬN THỦ ĐỨC"></asp:Label>
-                                </td>
+                                    &nbsp;</td>
                             </tr>
                             <tr style="text-align: center">
                                 <td style="color: #FF0000; font-size: x-large;">PHẦN MỀM GIÁM SÁT CẢNH BÁO NHIỆT ĐỘ KHO VÀ CÁC TỦ VACCINE</td>
                             </tr>
                         </table>
+
+
                     </td>
                     <td style="width: 23%; text-align: center">
 
-                        <asp:Image ID="Image1" style="height:50%;width:50%" runat="server" ImageUrl="~/logoCty.jpg" />
+                        <asp:Image ID="Image1" runat="server" Style="height: 50%; width: 50%" ImageUrl="~/logoCty.jpg" />
 
                     </td>
                 </tr>

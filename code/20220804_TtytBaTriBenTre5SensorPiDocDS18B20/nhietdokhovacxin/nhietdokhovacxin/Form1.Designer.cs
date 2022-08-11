@@ -36,24 +36,18 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label20 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label23 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -75,7 +69,7 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(12, 109);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1181, 393);
+            this.panel1.Size = new System.Drawing.Size(1181, 284);
             this.panel1.TabIndex = 0;
             // 
             // panel2
@@ -84,30 +78,24 @@
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.label20);
             this.panel2.Controls.Add(this.label10);
-            this.panel2.Controls.Add(this.label19);
             this.panel2.Controls.Add(this.label14);
-            this.panel2.Controls.Add(this.label15);
-            this.panel2.Controls.Add(this.label16);
             this.panel2.Controls.Add(this.label13);
             this.panel2.Controls.Add(this.label12);
             this.panel2.Controls.Add(this.label11);
-            this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(20, 21);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1140, 352);
+            this.panel2.Size = new System.Drawing.Size(1140, 245);
             this.panel2.TabIndex = 0;
             // 
             // label20
             // 
             this.label20.BackColor = System.Drawing.Color.LightCyan;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(960, 282);
+            this.label20.Location = new System.Drawing.Point(935, 185);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(154, 29);
             this.label20.TabIndex = 20;
@@ -118,23 +106,12 @@
             // 
             this.label10.BackColor = System.Drawing.Color.LightCyan;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(960, 235);
+            this.label10.Location = new System.Drawing.Point(775, 185);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(154, 29);
             this.label10.TabIndex = 19;
             this.label10.Text = "Modbus";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label19
-            // 
-            this.label19.BackColor = System.Drawing.Color.LightCyan;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(600, 175);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(230, 50);
-            this.label19.TabIndex = 16;
-            this.label19.Text = "label19";
-            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label14
             // 
@@ -146,28 +123,6 @@
             this.label14.TabIndex = 15;
             this.label14.Text = "label14";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label15
-            // 
-            this.label15.BackColor = System.Drawing.Color.LightCyan;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(25, 175);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(230, 50);
-            this.label15.TabIndex = 14;
-            this.label15.Text = "label15";
-            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label16
-            // 
-            this.label16.BackColor = System.Drawing.Color.LightCyan;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(310, 175);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(230, 50);
-            this.label16.TabIndex = 13;
-            this.label16.Text = "label16";
-            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label13
             // 
@@ -202,17 +157,6 @@
             this.label11.Text = "label11";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label9
-            // 
-            this.label9.BackColor = System.Drawing.Color.PowderBlue;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(600, 235);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(230, 90);
-            this.label9.TabIndex = 6;
-            this.label9.Text = "label9";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // label4
             // 
             this.label4.BackColor = System.Drawing.Color.PowderBlue;
@@ -221,30 +165,8 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(230, 90);
             this.label4.TabIndex = 5;
-            this.label4.Text = "0";
+            this.label4.Text = "GOOD";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label5
-            // 
-            this.label5.BackColor = System.Drawing.Color.PowderBlue;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(25, 234);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(230, 90);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "0";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label6
-            // 
-            this.label6.BackColor = System.Drawing.Color.PowderBlue;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(310, 234);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(230, 90);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "0";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label3
             // 
@@ -301,16 +223,6 @@
             this.label22.TabIndex = 2;
             this.label22.Text = "TRUNG TÂM Y TẾ DỰ PHÒNG QUẬN 7";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::nhietdokhovacxin.Properties.Resources.logoCty;
-            this.pictureBox1.Location = new System.Drawing.Point(977, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(228, 98);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
-            // 
             // label23
             // 
             this.label23.Image = global::nhietdokhovacxin.Properties.Resources.BOYTE11;
@@ -319,12 +231,22 @@
             this.label23.Size = new System.Drawing.Size(168, 107);
             this.label23.TabIndex = 3;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::nhietdokhovacxin.Properties.Resources.logoCty;
+            this.pictureBox1.Location = new System.Drawing.Point(969, 5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(235, 98);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1205, 513);
+            this.ClientSize = new System.Drawing.Size(1205, 407);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label23);
             this.Controls.Add(this.label22);
@@ -351,19 +273,13 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;

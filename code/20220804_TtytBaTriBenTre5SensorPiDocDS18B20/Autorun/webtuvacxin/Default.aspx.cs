@@ -26,7 +26,7 @@ public partial class _Default : System.Web.UI.Page
             if (!IsPostBack)
             {
                 Label25.Text = ConfigurationManager.AppSettings["tendonvi"];
-                Con = new MySqlConnection("Server =45.119.212.41 ; Database = ctybaokhoabvculaominhbentre ; Port=3306;User ID=customer_ttp ;Password=ThinhTamPhat!@#456&*(;charset=utf8");
+                Con = new MySqlConnection("Server =45.119.212.41 ; Database = ctybaokhoattytmocaybacbentre ; Port=3306;User ID=customer_ttp ;Password=ThinhTamPhat!@#456&*(;charset=utf8");
                 Con.Open();
                 // truy van de lay ten cam bien HIEN THI LEN LABELL 
                 string data = "SELECT * FROM idds18b20";
@@ -39,9 +39,6 @@ public partial class _Default : System.Web.UI.Page
                 Label12.Text = dt.Rows[1][2].ToString();
                 Label13.Text = dt.Rows[2][2].ToString();
                 Label14.Text = dt.Rows[3][2].ToString();
-                Label15.Text = dt.Rows[4][2].ToString();
-                Label16.Text = dt.Rows[5][2].ToString();
-                Label17.Text = dt.Rows[6][2].ToString();
 
             }
         }
@@ -61,7 +58,7 @@ public partial class _Default : System.Web.UI.Page
         Timer1.Enabled = false;
         try
         {
-            MySqlConnection _Con = new MySqlConnection("Server =45.119.212.41 ; Database = ctybaokhoabvculaominhbentre ; Port=3306;User ID=customer_ttp ;Password=ThinhTamPhat!@#456&*(;charset=utf8");
+            MySqlConnection _Con = new MySqlConnection("Server =45.119.212.41 ; Database = ctybaokhoattytmocaybacbentre ; Port=3306;User ID=customer_ttp ;Password=ThinhTamPhat!@#456&*(;charset=utf8");
             _Con.Open();
             string data = "SELECT * FROM hienthiweb";
             MySqlCommand _com = new MySqlCommand(data, _Con);
@@ -73,9 +70,6 @@ public partial class _Default : System.Web.UI.Page
             Label2.Text = _dt.Rows[0][1].ToString();
             Label3.Text = _dt.Rows[0][2].ToString();
             Label4.Text = _dt.Rows[0][3].ToString();
-            Label5.Text = _dt.Rows[0][4].ToString();
-            Label6.Text = _dt.Rows[0][5].ToString();
-            Label7.Text = _dt.Rows[0][6].ToString();
             string data1 = "SELECT * FROM gioihannhietdo";
             _com = new MySqlCommand(data1, _Con);
             _com.ExecuteNonQuery();
@@ -85,11 +79,8 @@ public partial class _Default : System.Web.UI.Page
             hienthi(Label1, _dt.Rows[0][1].ToString(), _dt.Rows[0][0].ToString(),0);
             hienthi(Label2, _dt.Rows[0][1].ToString(), _dt.Rows[0][0].ToString(),1);
             hienthi(Label3, _dt.Rows[0][1].ToString(), _dt.Rows[0][0].ToString(),2);
-            hienthi(Label4, _dt.Rows[0][1].ToString(), _dt.Rows[0][0].ToString(),3);
-            hienthi(Label5, _dt.Rows[0][1].ToString(), _dt.Rows[0][0].ToString(),4);
-            hienthi(Label6, _dt.Rows[0][1].ToString(), _dt.Rows[0][0].ToString(),5);
             
-            khoi(Label7);
+            khoi(Label4);
             _Con.Close();
         }
         catch { }
