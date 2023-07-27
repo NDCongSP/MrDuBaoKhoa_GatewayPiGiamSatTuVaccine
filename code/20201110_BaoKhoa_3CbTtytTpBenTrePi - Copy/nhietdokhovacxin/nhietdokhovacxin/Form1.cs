@@ -276,7 +276,6 @@ namespace nhietdokhovacxin
                         //Debug.WriteLine("doc nhiet do ban dau that bai");
                     }
                     #endregion
-
                 }
                 else
                 {
