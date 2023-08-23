@@ -126,6 +126,9 @@ namespace nhietdokhovacxin
             {
                 Console.WriteLine("MOI CAP NHAT 16/12/2020");
                 label22.Text = ConfigurationManager.AppSettings["tendonvi"];
+
+                mysql.ChuoiKetnoiMySQL_local = ConfigurationManager.AppSettings["conStr"];
+
                 ttkn_server = mysql.Ketnoi_local();
                 if (ttkn_server == "GOOD")
                 {
