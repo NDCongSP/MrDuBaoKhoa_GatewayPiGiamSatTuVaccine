@@ -84,7 +84,7 @@ public partial class baocao : System.Web.UI.Page
             {
                 if (Convert.ToDateTime(TextBox2.Text) > Convert.ToDateTime(TextBox1.Text))
                 {
-                    Con = new MySqlConnection("Server =45.119.212.41 ; Database = ctybaokhoacdcbentre ; Port=3306;User ID=customer_ttp ;Password=ThinhTamPhat!@#456&*(;charset=utf8");
+                    Con = new MySqlConnection(ConfigurationManager.AppSettings["conStr"]);
                     Con.Open();
                     string data1 = "SELECT * FROM xuatbaocao WHERE thoigian >= '" + TextBox1.Text + "' AND thoigian <= '" + TextBox2.Text + "'";
                     com = new MySqlCommand(data1, Con);

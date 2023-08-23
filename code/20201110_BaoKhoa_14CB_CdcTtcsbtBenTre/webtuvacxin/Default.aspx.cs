@@ -26,7 +26,7 @@ public partial class _Default : System.Web.UI.Page
             if (!IsPostBack)
             {
                 Label25.Text = ConfigurationManager.AppSettings["tendonvi"];
-                Con = new MySqlConnection("Server =45.119.212.41 ; Database = ctybaokhoacdcbentre ; Port=3306;User ID=customer_ttp ;Password=ThinhTamPhat!@#456&*(;charset=utf8");
+                Con = new MySqlConnection(ConfigurationManager.AppSettings["conStr"]);
                 Con.Open();
                 // truy van de lay ten cam bien HIEN THI LEN LABELL 
                 string data = "SELECT * FROM idds18b20";
@@ -70,7 +70,7 @@ public partial class _Default : System.Web.UI.Page
         Timer1.Enabled = false;
        // try
         {
-            MySqlConnection _Con = new MySqlConnection("Server =45.119.212.41 ; Database = ctybaokhoacdcbentre ; Port=3306;User ID=customer_ttp ;Password=ThinhTamPhat!@#456&*(;charset=utf8");
+            MySqlConnection _Con = new MySqlConnection(ConfigurationManager.AppSettings["conStr"]);
             _Con.Open();
             string data = "SELECT * FROM hienthiweb";
             MySqlCommand _com = new MySqlCommand(data, _Con);

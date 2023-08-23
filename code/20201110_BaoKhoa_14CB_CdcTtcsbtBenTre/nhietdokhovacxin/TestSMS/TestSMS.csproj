@@ -34,7 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="PLCPi">
-      <HintPath>..\..\..\FilesBuild\Debug\PLCPi.dll</HintPath>
+      <HintPath>..\..\..\..\..\2014PLCPiProject\PLCPiForPC\PLCPi\PLCPi\bin\Debug\PLCPi.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

@@ -33,11 +33,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MySql.Data">
-      <HintPath>..\nhietdokhovacxin\bin\Debug\MySql.Data.dll</HintPath>
-    </Reference>
     <Reference Include="PLCPi">
-      <HintPath>..\nhietdokhovacxin\bin\Debug\PLCPi.dll</HintPath>
+      <HintPath>..\..\..\..\..\2014PLCPiProject\PLCPiForPC\PLCPi\PLCPi\bin\Debug\PLCPi.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

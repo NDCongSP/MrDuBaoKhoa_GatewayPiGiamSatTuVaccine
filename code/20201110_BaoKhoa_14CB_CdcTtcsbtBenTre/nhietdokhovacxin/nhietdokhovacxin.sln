@@ -8,7 +8,7 @@ EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "webtuvacxin", "http://localhost:4237", "{8E5AB40E-E682-4CAB-86AC-9CDAFCD0AF9F}"
 	ProjectSection(WebsiteProperties) = preProject
 		UseIISExpress = "true"
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7.2"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_4237"
 		Debug.AspNetCompiler.PhysicalPath = "..\webtuvacxin\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_4237\"

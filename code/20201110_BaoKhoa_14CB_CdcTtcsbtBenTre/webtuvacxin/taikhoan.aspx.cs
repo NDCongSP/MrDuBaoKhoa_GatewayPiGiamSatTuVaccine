@@ -29,7 +29,7 @@ public partial class taikhoan : System.Web.UI.Page
     protected void Button6_Click(object sender, EventArgs e)
     {
         
-        Con = new MySqlConnection("Server =45.119.212.41 ; Database = ctybaokhoacdcbentre ; Port=3306;User ID=customer_ttp ;Password=ThinhTamPhat!@#456&*(;charset=utf8");
+        Con = new MySqlConnection(ConfigurationManager.AppSettings["conStr"]);
         Con.Open();
         // truy van de lay cac thong so h cua tai khoan
         string data3 = "SELECT * FROM taikhoan";

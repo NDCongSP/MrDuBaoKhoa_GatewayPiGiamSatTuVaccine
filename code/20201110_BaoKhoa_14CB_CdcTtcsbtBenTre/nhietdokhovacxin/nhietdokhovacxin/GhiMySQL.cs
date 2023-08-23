@@ -11,7 +11,7 @@ namespace nhietdokhovacxin
 {
     public class GhiMySQL
     {
-        public string ChuoiKetnoiMySQL_local = "Server =45.119.212.41 ; Database = ctybaokhoacdcbentre ; Port=3306;User ID=customer_ttp ;Password=ThinhTamPhat!@#456&*(;charset=utf8";
+        public string ChuoiKetnoiMySQL_local = "Server =localhost ; Database = ctybaokhoattytbentre ; Port=3306;User ID=root;Password=100100;charset=utf8";
         //public string ChuoiKetnoiMySQL_local = "Server = 192.168.1.36 ; Database = ctybaokhoa ; Port=3306;User ID=root ;Password=100100;charset=utf8";
         static MySqlConnection connect_local;
         /// <summary>
