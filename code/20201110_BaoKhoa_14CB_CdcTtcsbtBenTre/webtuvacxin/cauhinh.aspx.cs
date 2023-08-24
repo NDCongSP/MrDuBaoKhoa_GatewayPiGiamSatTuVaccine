@@ -20,7 +20,7 @@ public partial class cauhinh : System.Web.UI.Page
     DataTable dt;
     string conStringLocal = ConfigurationManager.AppSettings["conStr"];
 
-    string pathFile = @"D:\MyCompany\8.SourceCode\3.Projects\MrDuBaoKhoa_GatewayPiGiamSatTuVaccine\code\20201110_BaoKhoa_14CB_CdcTtcsbtBenTre\nhietdokhovacxin\nhietdokhovacxin\bin\Debug\Files\";
+    string pathFile = ConfigurationManager.AppSettings["pathFile"];
     //string pathFile = "/home/pi/Files/";
 
     public string ReadText(string PathFile)
